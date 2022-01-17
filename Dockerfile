@@ -6,7 +6,7 @@ RUN echo "trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdj
 RUN nix-env -i git-2.31.1
 
 WORKDIR /opt
-ARG PLUTUS_GIT_COMMIT=41149926c108c71831cfe8d244c83b0ee4bf5c8a
+ARG PLUTUS_GIT_COMMIT=7f53f18dfc788bf6aa929f47d840efa1247e11fd
 RUN git clone https://github.com/input-output-hk/plutus-apps /opt/plutus && \
 	cd /opt/plutus && \
 	git checkout ${PLUTUS_GIT_COMMIT}

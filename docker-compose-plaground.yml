@@ -1,7 +1,7 @@
 version: "3.6"
 services:
   server:
-    image: eviedigital:ppp-week1
+    image: eviedigital:ppp-week1.2
     ports:
       - "8080:8080"
     command:
@@ -9,7 +9,7 @@ services:
       - --run
       - "cd plutus-playground-client && plutus-playground-server"
   client:
-    image: eviedigital:ppp-week1
+    image: eviedigital:ppp-week1.2
     command:
       - nix-shell
       - --run
