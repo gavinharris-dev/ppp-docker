@@ -1,0 +1,24 @@
+version: "3.6"
+services:
+  server:
+    image: eviedigital/plutus-playground:latest
+    ports:
+      - "8080:8080"
+    command:
+      - nix-shell
+      - --run
+      - "cd plutus-playground-client && plutus-playground-server"
+  client:
+    image: eviedigital/plutus-playground:latest
+    volumes:
+      - ../plutus-pioneer-program:/plutus-pioneer-program
+    command:
+      - nix-shell
+      - --run
+      - "cd plutus-playground-client && npm run start"
+    depends_on:
+      - server
+    ports:
+      - "8009:8009"
+    links:
+      - server
